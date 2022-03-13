@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaCaretDown } from "react-icons/fa";
 
 const MatchPreferences = () => {
 
@@ -126,14 +127,14 @@ const MatchPreferences = () => {
                                 <option value="mercedes">Mercedes</option>
                                 <option value="audi">Audi</option>
                             </select>
-                            <i style={{
+                            <FaCaretDown style={{
                                 float: 'right',
                                 marginRight: '6px',
                                 marginTop: '-28px',
                                 position: 'relative',
                                 zIndex: 2,
                                 color: 'red',
-                            }} className="fa fa-caret-down" aria-hidden="true"></i>
+                            }} />
                         </div>
                     </div>
                     <div className="form-group row my-2">
@@ -156,14 +157,14 @@ const MatchPreferences = () => {
                                 <option value="mercedes">Mercedes</option>
                                 <option value="audi">Audi</option>
                             </select>
-                            <i style={{
+                            <FaCaretDown style={{
                                 float: 'right',
                                 marginRight: '6px',
                                 marginTop: '-28px',
                                 position: 'relative',
                                 zIndex: 2,
                                 color: 'red',
-                            }} className="fa fa-caret-down" aria-hidden="true"></i>
+                            }} />
                         </div>
                     </div>
                     <div className="form-group row my-2">
@@ -177,14 +178,14 @@ const MatchPreferences = () => {
                                 <option value="mercedes">Mercedes</option>
                                 <option value="audi">Audi</option>
                             </select>
-                            <i style={{
+                            <FaCaretDown style={{
                                 float: 'right',
                                 marginRight: '6px',
                                 marginTop: '-28px',
                                 position: 'relative',
                                 zIndex: 2,
                                 color: 'red',
-                            }} className="fa fa-caret-down" aria-hidden="true"></i>
+                            }} />
                         </div>
                     </div>
                     <div className="form-group row my-2">
@@ -198,14 +199,14 @@ const MatchPreferences = () => {
                                 <option value="mercedes">Mercedes</option>
                                 <option value="audi">Audi</option>
                             </select>
-                            <i style={{
+                            <FaCaretDown style={{
                                 float: 'right',
                                 marginRight: '6px',
                                 marginTop: '-28px',
                                 position: 'relative',
                                 zIndex: 2,
                                 color: 'red',
-                            }} className="fa fa-caret-down" aria-hidden="true"></i>
+                            }} />
                         </div>
                     </div>
                 </div>
@@ -228,14 +229,14 @@ const MatchPreferences = () => {
                                 <option value="mercedes">Mercedes</option>
                                 <option value="audi">Audi</option>
                             </select>
-                            <i style={{
+                            <FaCaretDown style={{
                                 float: 'right',
                                 marginRight: '6px',
                                 marginTop: '-28px',
                                 position: 'relative',
                                 zIndex: 2,
                                 color: 'red',
-                            }} className="fa fa-caret-down" aria-hidden="true"></i>
+                            }} />
                         </div>
                     </div>
                     <div className="form-group row my-2">
@@ -267,14 +268,14 @@ const MatchPreferences = () => {
                                 <option value="mercedes">Mercedes</option>
                                 <option value="audi">Audi</option>
                             </select>
-                            <i style={{
+                            <FaCaretDown style={{
                                 float: 'right',
                                 marginRight: '6px',
                                 marginTop: '-28px',
                                 position: 'relative',
                                 zIndex: 2,
                                 color: 'red',
-                            }} className="fa fa-caret-down" aria-hidden="true"></i>
+                            }} />
                         </div>
                     </div>
                     <div className="form-group row my-2">
@@ -288,14 +289,14 @@ const MatchPreferences = () => {
                                 <option value="mercedes">Mercedes</option>
                                 <option value="audi">Audi</option>
                             </select>
-                            <i style={{
+                            <FaCaretDown style={{
                                 float: 'right',
                                 marginRight: '6px',
                                 marginTop: '-28px',
                                 position: 'relative',
                                 zIndex: 2,
                                 color: 'red',
-                            }} className="fa fa-caret-down" aria-hidden="true"></i>
+                            }} />
                         </div>
                     </div>
                     {/* ----- */}
@@ -310,14 +311,14 @@ const MatchPreferences = () => {
                                 <option value="mercedes">Mercedes</option>
                                 <option value="audi">Audi</option>
                             </select>
-                            <i style={{
+                            <FaCaretDown style={{
                                 float: 'right',
                                 marginRight: '6px',
                                 marginTop: '-28px',
                                 position: 'relative',
                                 zIndex: 2,
                                 color: 'red',
-                            }} className="fa fa-caret-down" aria-hidden="true"></i>
+                            }} />
                         </div>
                     </div>
                     <div className="form-group row my-2">
@@ -331,14 +332,14 @@ const MatchPreferences = () => {
                                 <option value="mercedes">Mercedes</option>
                                 <option value="audi">Audi</option>
                             </select>
-                            <i style={{
+                            <FaCaretDown style={{
                                 float: 'right',
                                 marginRight: '6px',
                                 marginTop: '-28px',
                                 position: 'relative',
                                 zIndex: 2,
                                 color: 'red',
-                            }} className="fa fa-caret-down" aria-hidden="true"></i>
+                            }} />
                         </div>
                     </div>
                     <div className="form-group row my-2">
@@ -352,14 +353,14 @@ const MatchPreferences = () => {
                                 <option value="mercedes">Mercedes</option>
                                 <option value="audi">Audi</option>
                             </select>
-                            <i style={{
+                            <FaCaretDown style={{
                                 float: 'right',
                                 marginRight: '6px',
                                 marginTop: '-28px',
                                 position: 'relative',
                                 zIndex: 2,
                                 color: 'red',
-                            }} className="fa fa-caret-down" aria-hidden="true"></i>
+                            }} />
                         </div>
                     </div>
                     <div className="form-group row my-2">
@@ -373,14 +374,14 @@ const MatchPreferences = () => {
                                 <option value="mercedes">Mercedes</option>
                                 <option value="audi">Audi</option>
                             </select>
-                            <i style={{
+                            <FaCaretDown style={{
                                 float: 'right',
                                 marginRight: '6px',
                                 marginTop: '-28px',
                                 position: 'relative',
                                 zIndex: 2,
                                 color: 'red',
-                            }} className="fa fa-caret-down" aria-hidden="true"></i>
+                            }} />
                         </div>
                     </div>
                     <div className="form-group row my-2">
@@ -394,14 +395,14 @@ const MatchPreferences = () => {
                                 <option value="mercedes">Mercedes</option>
                                 <option value="audi">Audi</option>
                             </select>
-                            <i style={{
+                            <FaCaretDown style={{
                                 float: 'right',
                                 marginRight: '6px',
                                 marginTop: '-28px',
                                 position: 'relative',
                                 zIndex: 2,
                                 color: 'red',
-                            }} className="fa fa-caret-down" aria-hidden="true"></i>
+                            }} />
                         </div>
                     </div>
                     <div className="form-group row my-2">
@@ -421,14 +422,14 @@ const MatchPreferences = () => {
                                 <option value="mercedes">Mercedes</option>
                                 <option value="audi">Audi</option>
                             </select>
-                            <i style={{
+                            <FaCaretDown style={{
                                 float: 'right',
                                 marginRight: '6px',
                                 marginTop: '-28px',
                                 position: 'relative',
                                 zIndex: 2,
                                 color: 'red',
-                            }} className="fa fa-caret-down" aria-hidden="true"></i>
+                            }} />
                         </div>
                     </div>
                     <div className="form-group row my-2">
@@ -442,14 +443,14 @@ const MatchPreferences = () => {
                                 <option value="mercedes">Mercedes</option>
                                 <option value="audi">Audi</option>
                             </select>
-                            <i style={{
+                            <FaCaretDown style={{
                                 float: 'right',
                                 marginRight: '6px',
                                 marginTop: '-28px',
                                 position: 'relative',
                                 zIndex: 2,
                                 color: 'red',
-                            }} className="fa fa-caret-down" aria-hidden="true"></i>
+                            }} />
                         </div>
                     </div>
                 </div>
