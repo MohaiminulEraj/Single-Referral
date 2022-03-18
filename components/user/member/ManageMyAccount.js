@@ -3,24 +3,33 @@ import React, { useState } from 'react'
 const ManageMyAccount = () => {
 
     const [name, setName] = useState('');
-    const [number, setNumber] = useState(0);
+    const [number, setNumber] = useState(-1);
     const [paypal, setPaypal] = useState(false);
-    const [interac, setInterac] = useState(false);
+    const [interac, setInterac] = useState(true);
     const [bkash, setBkash] = useState(false);
+    const [paypalAddr, setPaypalAddr] = useState('');
+    const [interacAddr, setInteracAddr] = useState('');
+    const [bkashAddr, setBkashAddr] = useState('');
 
     const checkRadio = (e) => {
         if (e.target.name === 'paypal') {
             setPaypal(true);
             setInterac(false);
             setBkash(false);
+            setInteracAddr('');
+            setBkashAddr('');
         } else if (e.target.name === 'interac') {
             setPaypal(false);
             setInterac(true);
             setBkash(false);
+            setPaypalAddr('');
+            setBkashAddr('');
         } else if (e.target.name === 'bkash') {
             setPaypal(false);
             setInterac(false);
             setBkash(true);
+            setPaypalAddr('');
+            setInteracAddr('');
         }
     }
 
@@ -34,13 +43,13 @@ const ManageMyAccount = () => {
             <div className="form-group row my-2">
                 <label className="col-sm-4 col-form-label">Name:</label>
                 <div className="col-sm-8">
-                    <input type="text" value={name} placeholder="Please provide your legal name" className="form-control" />
+                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Please provide your legal name" className="form-control" required />
                 </div>
             </div>
             <div className="form-group row my-2">
                 <label className="col-sm-4 col-form-label">Mobile No:</label>
                 <div className="col-sm-8">
-                    <input type="number" value={number} className="form-control" />
+                    <input type="number" min={0} value={number !== -1 && number} onChange={(e) => setNumber(e.target.value)} className="form-control" required />
                 </div>
             </div>
             <div className="form-group row my-2">
@@ -51,7 +60,7 @@ const ManageMyAccount = () => {
                     </div>
                 </div>
                 <div className="col-sm-8">
-                    <input type="text" className="form-control" placeholder="Print Your Paypal Account" disabled={!paypal} />
+                    <input type="text" className="form-control" placeholder="Print Your Paypal Account" disabled={!paypal} value={paypalAddr} onChange={(e) => setPaypalAddr(e.target.value)} required={paypal} />
                 </div>
             </div>
             <div className="form-group row my-2">
@@ -62,7 +71,7 @@ const ManageMyAccount = () => {
                     </div>
                 </div>
                 <div className="col-sm-8">
-                    <input type="text" className="form-control" placeholder="Print Your Auto Deposit Email" disabled={!interac} />
+                    <input type="text" className="form-control" value={interacAddr} onChange={(e) => setInteracAddr(e.target.value)} placeholder="Print Your Auto Deposit Email" disabled={!interac} required={interac} />
                 </div>
             </div>
             <div className="form-group row my-2">
@@ -73,7 +82,7 @@ const ManageMyAccount = () => {
                     </div>
                 </div>
                 <div className="col-sm-8">
-                    <input type="text" className="form-control" placeholder="Print Your bKash Number" disabled={!bkash} />
+                    <input type="text" className="form-control" value={bkashAddr} onChange={(e) => setBkashAddr(e.target.value)} placeholder="Print Your bKash Number" disabled={!bkash} required={bkash} />
                 </div>
                 <button type="submit" className="btn btn-primary my-4">Submit</button>
             </div>

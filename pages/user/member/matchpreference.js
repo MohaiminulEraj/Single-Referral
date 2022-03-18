@@ -5,7 +5,7 @@ import Layout from '@/components/layout/Layout'
 
 const matchPreferences = () => {
     return (
-        <Layout title="Match Preferences">
+        <Layout title="Match Preferences - Single Referral">
             <MatchPreferences />
         </Layout>
     )

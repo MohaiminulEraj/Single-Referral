@@ -3,7 +3,7 @@ import SelectPackage from '@/components/user/member/SelectPackage'
 import Layout from '@/components/layout/Layout'
 const selectpackage = () => {
     return (
-        <Layout title="Match Preferences">
+        <Layout title="Select Package - Single Referral">
             <SelectPackage />
         </Layout>
     )

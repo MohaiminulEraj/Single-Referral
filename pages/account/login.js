@@ -4,7 +4,7 @@ import Layout from '@/components/layout/Layout'
 
 export default function LoginPage() {
     return (
-        <Layout title="User Login - Care For You" >
+        <Layout title="User Login - Single Referral" >
             <Login />
         </Layout>
     )

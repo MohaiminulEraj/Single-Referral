@@ -4,7 +4,7 @@ import Layout from '@/components/layout/Layout'
 
 const managemyaccount = () => {
   return (
-    <Layout title="Match Preferences">
+    <Layout title="Manage My Account - Single Referral">
       <ManageMyAccount />
     </Layout>
   )

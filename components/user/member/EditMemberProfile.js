@@ -30,7 +30,6 @@ const EditMemberProfile = () => {
         country_of_living,
         country_of_origin,
         height,
-        height_max,
         marital_status,
         body_complexion,
         education,

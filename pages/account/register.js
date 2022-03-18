@@ -4,7 +4,7 @@ import Layout from '@/components/layout/Layout'
 
 export default function RegisterPage() {
     return (
-        <Layout title="User Register - Care For You" >
+        <Layout title="User Register - Single Referral" >
             <Register />
         </Layout>
     )

@@ -5,7 +5,7 @@ import Layout from '@/components/layout/Layout'
 
 const updateProfilePage = () => {
     return (
-        <Layout title="Update Profile">
+        <Layout title="Update Profile - Single Referral">
             <EditMemberProfile />
         </Layout>
     )
