@@ -53,6 +53,7 @@ const ManageMyAccount = () => {
                 </div>
             </div>
             <div className="form-group row my-2">
+                <h3 className="my-4">Withdrawal Method</h3>
                 <div className="col-sm-4">
                     <div className="form-check form-check-inline">
                         <input className="form-check-input" type="radio" onChange={checkRadio} checked={paypal} name="paypal" id="paypalRadio" />
