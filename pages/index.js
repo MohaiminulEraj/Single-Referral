@@ -15,7 +15,7 @@ export default function Home() {
       <div className={styles.appLayout}>
         {showAdvanced ? <Advanced /> : <Simple />}
         <div className={styles.row}>
-          <p style={{ color: 'black' }}>Show {showAdvanced ? 'Less Feature' : 'More Feature'}</p> <Switch checked={showAdvanced} onChange={setShowAdvanced} />
+          <p style={{ color: 'black' }}>{showAdvanced ? 'Hide' : 'Show'} Buttons</p> <Switch checked={showAdvanced} onChange={setShowAdvanced} />
         </div>
       </div>
       {/* <div className={styles.container}>
