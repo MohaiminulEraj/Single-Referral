@@ -64,20 +64,20 @@ const Register = () => {
                 <div className="col-md-6 my-3">
                     <div className="form-group">
                         <label htmlFor="email" >Email Address</label>
-                        <input className="form-control" type="email" id="email" name="email" value={email} onChange={onChange} />
+                        <input className="form-control" type="email" id="email" name="email" value={email} onChange={onChange} required />
                     </div>
                     <div className="form-group">
                         <label htmlFor="password">Password</label>
-                        <input className="form-control" type="password" id="password" name="password" value={password} onChange={onChange} />
+                        <input className="form-control" type="password" id="password" name="password" value={password} onChange={onChange} required />
                     </div>
                     <div className="form-group">
                         <label htmlFor="passwordConfirm" > Confirm Password</label>
-                        <input className="form-control" type="password" id="passwordConfirm" value={passwordConfirm} onChange={(e) => setPasswordConfirm(e.target.value)} />
+                        <input className="form-control" type="password" id="passwordConfirm" value={passwordConfirm} onChange={(e) => setPasswordConfirm(e.target.value)} required />
                     </div>
                 </div>
                 <div className="col-md-6 my-4">
                     <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" required />
                         <label style={{ fontWeight: "bold" }} className="form-check-label" htmlFor="inlineRadio1">Profile Membership (VIP + Free)</label>
                         <br />
                         <small>(Seek out a life partner and earn financial benefits)</small>
