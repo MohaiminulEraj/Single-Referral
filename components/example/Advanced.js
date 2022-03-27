@@ -6,6 +6,7 @@ import db from '../../data/user.json';
 const Advanced = () => {
     const [currentIndex, setCurrentIndex] = useState(db.length - 1)
     const [lastDirection, setLastDirection] = useState()
+    const [imgVal, setImgVal] = useState(1)
     // used for outOfFrame closure
     const currentIndexRef = useRef(currentIndex)
 
@@ -28,6 +29,15 @@ const Advanced = () => {
 
     // set last direction and decrease current index
     const swiped = (direction, nameToDelete, index) => {
+        if (direction === 'right' || direction === 'left') {
+            imgVal++;
+            if (imgVal > 4) {
+                imgVal = 1;
+            }
+        } else {
+            imgVal = 1;
+        }
+        setImgVal(imgVal);
         setLastDirection(direction)
         updateCurrentIndex(index - 1)
     }
@@ -68,15 +78,16 @@ const Advanced = () => {
                     <SRCard
                         ref={childRefs[index]}
                         className={styles.swipe}
-                        key={character.frist_name}
-                        onSwipe={(dir) => swiped(dir, character.frist_name, index)}
-                        onCardLeftScreen={() => outOfFrame(character.frist_name, index)}
+                        key={lastDirection === 'left' || lastDirection === 'right' ? character['img' + imgVal] : character.name}
+                        onSwipe={(dir) => swiped(dir, character.name, index)}
+                        onCardLeftScreen={() => outOfFrame(character.name, index)}
                     >
+                        {imgVal}
                         <div
-                            style={{ backgroundImage: 'url(' + character.img + ')' }}
+                            style={{ backgroundImage: `url(${character['img' + imgVal]})` }}
                             className={styles.card}
                         >
-                            <h3>{character.frist_name}</h3>
+                            <h3 style={{ color: 'black' }}>{character.name}</h3>
                         </div>
                     </SRCard>
                 ))}
