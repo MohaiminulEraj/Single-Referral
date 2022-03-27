@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
-const MemberSchema = new Schema({
+const MatchPreferenceSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User',
@@ -192,4 +192,4 @@ const MemberSchema = new Schema({
     }
 }, { timestamps: true });
 
-export default mongoose.models.Member || mongoose.model('Member', MemberSchema);
+export default mongoose.models.MatchPreference || mongoose.model('MatchPreference', MatchPreferenceSchema);

@@ -30,7 +30,8 @@ const UserSchema = new Schema({
                 'employee',
                 'admin'
             ]
-        }
+        },
+        required: [true, 'Please select the type of membership!'],
     },
     refferal_code: {
         type: String,
