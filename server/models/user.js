@@ -46,6 +46,11 @@ const UserSchema = new Schema({
         type: Boolean,
         default: false
     },
+    has_complete_profile: {
+        type: Boolean,
+        default: false
+    },
+    
     resetPasswordToken: String,
     resetPasswordExpire: Date,
 }, { timestamps: true });

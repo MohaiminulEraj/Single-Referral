@@ -5,7 +5,8 @@ import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 // import ButtonLoader from '../layout/ButtonLoader'
 import styles from '@/styles/AuthForm.module.css'
-// import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { registerUser, clearErrors } from '@/redux/actions/userActions'
 import Link from 'next/link'
 // import Image from 'next/image'
 
@@ -15,29 +16,24 @@ const Register = () => {
     const [user, setUser] = useState({
         email: '',
         password: '',
+        role: '',
     })
-    const { email, password } = user
-    // const [avatar, setAvatar] = useState('/images/default_avatar.jpg');
-    // const [avatarPrevew, setAvatarPrevew] = useState('/images/default_avatar.jpg');
-    // const { success, error, loading } = useSelector(state => state.auth)
+    const { email, password, role } = user
+    const { success, error, loading } = useSelector(state => state.auth)
 
-    // useEffect(() => {
+    useEffect(() => {
 
-    //     if (success) {
-    //         router.push('/account/login')
-    //     }
+        if (success) {
+            router.push('/account/login')
+        }
 
-    //     if (error) {
-    //         toast.error(error);
-    //         dispatch(clearErrors())
-    //     }
+        if (error) {
+            toast.error(error);
+            dispatch(clearErrors())
+        }
 
-    // }, [dispatch, success, error])
+    }, [dispatch, success, error])
 
-    // const [fullname, setFullname] = useState('')
-    // const [username, setUsername] = useState('')
-    // const [email, setEmail] = useState('')
-    // const [password, setPassword] = useState('');
     const [passwordConfirm, setPasswordConfirm] = useState('');
 
     const handleSubmit = e => {
@@ -48,7 +44,7 @@ const Register = () => {
             return;
         }
         const userData = {
-            fullname, username, email, password
+            email, password, role
         }
         dispatch(registerUser(userData))
     }
@@ -77,13 +73,13 @@ const Register = () => {
                 </div>
                 <div className="col-md-6 my-4">
                     <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" required />
+                        <input className="form-check-input" type="radio" name="role" id="inlineRadio1" value="member" required />
                         <label style={{ fontWeight: "bold" }} className="form-check-label" htmlFor="inlineRadio1">Profile Membership (VIP + Free)</label>
                         <br />
                         <small>(Seek out a life partner and earn financial benefits)</small>
                     </div>
                     <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+                        <input className="form-check-input" type="radio" name="role" id="inlineRadio2" value="affiliate" />
                         <label style={{ fontWeight: "bold" }} className="form-check-label" htmlFor="inlineRadio2">Affiliate Marketing (Free)</label>
                         <br />
                         <small>(Refer to others for sign up and get paid weekly)</small>
