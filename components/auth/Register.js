@@ -11,7 +11,7 @@ import Link from 'next/link'
 // import Image from 'next/image'
 
 const Register = () => {
-    // const dispatch = useDispatch()
+    const dispatch = useDispatch()
     const router = useRouter()
     const [user, setUser] = useState({
         email: '',
@@ -19,20 +19,20 @@ const Register = () => {
         role: '',
     })
     const { email, password, role } = user
-    const { success, error, loading } = useSelector(state => state.auth)
+    // const { success, error, loading } = useSelector(state => state.auth)
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        if (success) {
-            router.push('/account/login')
-        }
+    //     if (success) {
+    //         router.push('/account/login')
+    //     }
 
-        if (error) {
-            toast.error(error);
-            dispatch(clearErrors())
-        }
+    //     if (error) {
+    //         toast.error(error);
+    //         dispatch(clearErrors())
+    //     }
 
-    }, [dispatch, success, error])
+    // }, [dispatch, success, error])
 
     const [passwordConfirm, setPasswordConfirm] = useState('');
 
@@ -55,7 +55,6 @@ const Register = () => {
 
     return (
         <div className="container">
-
             <form className="row" onSubmit={handleSubmit}>
                 <div className="col-md-6 my-3">
                     <div className="form-group">
