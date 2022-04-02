@@ -20,12 +20,12 @@ const registerUser = async (req, res) => {
     try {
         const { email, password, role } = req.body;
 
-        let refferal_code = Math.random().toString(36).substr(2, 8);
+        let refferal_code = Math.random().toString(36).substr(2, 7);
 
         const checkRefStatus = await User.find({ refferal_code });
 
         if (checkRefStatus.length > 0) {
-            refferal_code = Math.random().toString(36).substr(2, 7).toUpperCase();
+            refferal_code = Math.random().toString(36).substr(2, 8);
         }
 
         const user = await User.create({
