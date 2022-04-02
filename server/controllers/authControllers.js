@@ -11,14 +11,19 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET,
 })
 
-// var job = new CronJob('* * * * * *', function() {
-//   console.log('You will see this message every second');
+// var job = new CronJob('* 1 * * * *', function () {
+//     console.log('You will see this message every minute');
 // }, null, true, 'America/Los_Angeles');
 // job.start();
 
 const registerUser = async (req, res) => {
     try {
         const { email, password, role } = req.body;
+
+        const checkEmail = await User.findOne({ email: email });
+        if (checkEmail) {
+            throw new Error(`User ${email} already exists!`)
+        }
 
         let refferal_code = Math.random().toString(36).substr(2, 7);
 
@@ -35,17 +40,20 @@ const registerUser = async (req, res) => {
             refferal_code,
         });
 
+
         res.status(200).json({
             success: true,
             message: 'Account Registered successfully.'
         })
+
     }
     catch (error) {
         console.error(error);
-        res.status(500).json({
-            success: false,
-            message: error.message
-        })
+        throw new Error(error.message);
+        // res.status(500).json({
+        //     success: false,
+        //     message: error.message
+        // })
     }
 }
 
@@ -79,10 +87,6 @@ const deleteUser = async (req, res, next) => {
         if (!user) {
             return next(new ErrorHandler('User not found with this ID.', 400))
         }
-
-        // Remove avatar 
-        const image_id = user.avatar.public_id;
-        if (image_id) await cloudinary.v2.uploader.destroy(image_id)
 
 
         await user.remove();

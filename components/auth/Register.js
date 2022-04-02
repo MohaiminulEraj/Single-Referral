@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { FaUser } from 'react-icons/fa'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-// import ButtonLoader from '../layout/ButtonLoader'
+import ButtonLoader from '../layout/ButtonLoader'
 import styles from '@/styles/AuthForm.module.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { registerUser, clearErrors } from '@/redux/actions/userActions'
@@ -31,7 +31,7 @@ const Register = () => {
 
         if (error) {
             toast.error(error);
-            // dispatch(clearErrors())
+            dispatch(clearErrors())
         }
 
     }, [dispatch, success, error])
@@ -55,6 +55,8 @@ const Register = () => {
     const onChange = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value })
     }
+
+
 
     return (
         <div className="container">
@@ -133,9 +135,10 @@ const Register = () => {
                         </label>
                     </div>
                 </div>
-
-                <button type="submit" className="btn btn-danger btn-block mt-0">REGISTER</button>
-                {/* <button type="submit" className="btn btn-danger btn-block" disabled={loading ? true : false} >{loading ? <ButtonLoader /> : 'REGISTER'} </button> */}
+                {/* <div className="d-flex justify-content-center"> */}
+                {/* <button type="submit" className="btn btn-danger btn-block mt-0">REGISTER</button> */}
+                <button type="submit" className="btn btn-danger btn-block mt-0" disabled={loading ? true : false} >{loading ? <ButtonLoader /> : 'REGISTER'} </button>
+                {/* </div> */}
             </form>
 
             <p className='mt-3'>
