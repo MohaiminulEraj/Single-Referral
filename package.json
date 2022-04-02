@@ -8,14 +8,17 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "browser": {
+    "child_process": false
+  },
   "dependencies": {
     "axios": "^0.26.0",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.29.0",
     "colors": "^1.4.0",
     "cron": "^1.8.2",
-    "mongoose": "^6.2.8",
-    "next": "^12.1.2",
+    "mongoose": "^6.2.9",
+    "next": "^12.1.4",
     "next-absolute-url": "^1.2.2",
     "next-auth": "^4.3.1",
     "next-connect": "^0.12.2",

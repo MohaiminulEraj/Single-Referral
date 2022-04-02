@@ -18,13 +18,21 @@ cloudinary.config({
 
 const registerUser = async (req, res) => {
     try {
-        const { email, password } = req.body;
+        const { email, password, role } = req.body;
 
+        let refferal_code = Math.random().toString(36).substr(2, 8);
+
+        const checkRefStatus = await User.find({ refferal_code });
+
+        if (checkRefStatus.length > 0) {
+            refferal_code = Math.random().toString(36).substr(2, 7).toUpperCase();
+        }
 
         const user = await User.create({
             email,
             password,
-
+            role,
+            refferal_code,
         });
 
         res.status(200).json({

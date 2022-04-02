@@ -8,6 +8,7 @@ import styles from '@/styles/AuthForm.module.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { registerUser, clearErrors } from '@/redux/actions/userActions'
 import Link from 'next/link'
+
 // import Image from 'next/image'
 
 const Register = () => {
@@ -19,20 +20,21 @@ const Register = () => {
         role: '',
     })
     const { email, password, role } = user
-    // const { success, error, loading } = useSelector(state => state.auth)
+    const { success, error, loading } = useSelector(state => state.auth)
 
-    // useEffect(() => {
+    useEffect(() => {
 
-    //     if (success) {
-    //         router.push('/account/login')
-    //     }
+        if (success) {
+            toast.success('Registration successful!');
+            // router.push('/account/login')
+        }
 
-    //     if (error) {
-    //         toast.error(error);
-    //         dispatch(clearErrors())
-    //     }
+        if (error) {
+            toast.error(error);
+            // dispatch(clearErrors())
+        }
 
-    // }, [dispatch, success, error])
+    }, [dispatch, success, error])
 
     const [passwordConfirm, setPasswordConfirm] = useState('');
 
@@ -46,6 +48,7 @@ const Register = () => {
         const userData = {
             email, password, role
         }
+        console.log(userData);
         dispatch(registerUser(userData))
     }
 
@@ -71,17 +74,19 @@ const Register = () => {
                     </div>
                 </div>
                 <div className="col-md-6 my-4">
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="radio" name="role" id="inlineRadio1" value="member" required />
-                        <label style={{ fontWeight: "bold" }} className="form-check-label" htmlFor="inlineRadio1">Profile Membership (VIP + Free)</label>
-                        <br />
-                        <small>(Seek out a life partner and earn financial benefits)</small>
-                    </div>
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="radio" name="role" id="inlineRadio2" value="affiliate" />
-                        <label style={{ fontWeight: "bold" }} className="form-check-label" htmlFor="inlineRadio2">Affiliate Marketing (Free)</label>
-                        <br />
-                        <small>(Refer to others for sign up and get paid weekly)</small>
+                    <div onChange={onChange}>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input" type="radio" name="role" id="inlineRadio1" value="member" required />
+                            <label style={{ fontWeight: "bold" }} className="form-check-label" htmlFor="inlineRadio1">Profile Membership (VIP + Free)</label>
+                            <br />
+                            <small>(Seek out a life partner and earn financial benefits)</small>
+                        </div>
+                        <div className="form-check form-check-inline">
+                            <input className="form-check-input" type="radio" name="role" id="inlineRadio2" value="affiliate" />
+                            <label style={{ fontWeight: "bold" }} className="form-check-label" htmlFor="inlineRadio2">Affiliate Marketing (Free)</label>
+                            <br />
+                            <small>(Refer to others for sign up and get paid weekly)</small>
+                        </div>
                     </div>
                     <table style={{ textAlign: "center" }} className="table table-bordered">
                         <thead>
